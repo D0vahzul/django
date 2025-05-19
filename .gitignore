@@ -1,0 +1,32 @@
+# Python venv
+venv/
+.env/
+*.env
+*.venv
+env/
+ENV/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django migrations
+*/migrations/__pycache__/
+*/migrations/*.pyc
+
+# VSCode / PyCharm / IDE
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# SQLite DB (isteğe bağlı)
+db.sqlite3
+
+# Static/media (deploy'da ayrı tutuluyorsa)
+staticfiles/
+media/

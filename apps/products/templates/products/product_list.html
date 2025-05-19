@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ürünler</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Ürün Listesi</h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {% for product in products %}
+                <div class="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition">
+                    <div class="text-lg font-semibold text-gray-900 mb-2">{{ product.name }}</div>
+                    <div class="text-gray-600 text-sm">Fiyat:</div>
+                    {% if product.currency == "$" %}
+                        <div class="text-xl font-bold text-green-600">{{ product.currency }} {{ product.price }} </div>
+                        {%else%}
+                        <div class="text-xl font-bold text-green-600">{{ product.price }} {{ product.currency }}</div>
+                    {% endif %}
+                </div>
+            {% empty %}
+                <div class="col-span-full text-center text-gray-600">
+                    Henüz ürün eklenmemiş.
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
